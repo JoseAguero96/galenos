@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Galenos", "Galenos\Galenos.csproj", "{5E653026-77D1-44DA-8A8C-4410FCFD30BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{7D221F60-3863-445A-AD81-5748E8C5D755}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolaPruebas", "ConsolaPruebas\ConsolaPruebas.csproj", "{53D96EFA-9DC7-4B51-801F-0F93457D93F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,19 @@ Global
 		{5E653026-77D1-44DA-8A8C-4410FCFD30BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E653026-77D1-44DA-8A8C-4410FCFD30BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E653026-77D1-44DA-8A8C-4410FCFD30BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D221F60-3863-445A-AD81-5748E8C5D755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D221F60-3863-445A-AD81-5748E8C5D755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D221F60-3863-445A-AD81-5748E8C5D755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D221F60-3863-445A-AD81-5748E8C5D755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53D96EFA-9DC7-4B51-801F-0F93457D93F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53D96EFA-9DC7-4B51-801F-0F93457D93F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53D96EFA-9DC7-4B51-801F-0F93457D93F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53D96EFA-9DC7-4B51-801F-0F93457D93F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D93CE9DF-5CC8-4D0A-9EE0-8E5D0E17648B}
 	EndGlobalSection
 EndGlobal
