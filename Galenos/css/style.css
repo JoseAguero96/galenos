@@ -148,3 +148,29 @@ body{
     width: 75%;
     margin-top: 10px;
 }
+
+.textbox {
+    background-color: #3CBC8D;
+    color: white;
+}
+
+.botonlargo {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #039;
+    text-decoration: none;
+    background-color: #FFFFFF;
+    /* background-position: center; */
+    display: block;
+    height: 25px;
+    width: 158px;
+    /* padding-left: 10px; */
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+
