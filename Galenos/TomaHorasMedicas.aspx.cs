@@ -17,40 +17,53 @@ namespace Galenos
 
         protected void btnHoraMedico_Click(object sender, EventArgs e)
         {
+            lblMensaje1.Text = "";
+            txtNombreMedico.Text = "";
             MultiView1.ActiveViewIndex = 1;
         }
 
         protected void btnPorArea_Click(object sender, EventArgs e)
         {
+            lblMensaje2.Text = "";
+            ddlArea.SelectedIndex = 0;
             MultiView1.ActiveViewIndex = 2;
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtApellidoMedico.Text == "")
+            if (txtNombreMedico.Text == "")
             {
                 lblMensaje1.Text = "Apellido de medico Obligatorio*";
             }
             else
             {
-                //string apellidoMedico = txtApellidoMedico.Text;
-                //var response = "http://192.168.43.210:3000/buscar-medico/"
-                //       .PostUrlEncodedAsync(new { ApellidoMedico = apellidoMedico })
-                //       .ReceiveJson();
-                //string result = response.Result.ToString();
-                //if (result != "false")
-                //{
-                //    Session["Medicos"] = result;
-                //}
-                //else
-                //{
-                //    if (result == null)
-                //    {
-                //        lblMensaje1.Text = "No se encontró el Medico buscado.";
-                //    }
-                //}
-                //lblMensaje1.Text = response.Result.ToString();
-                if(txtApellidoMedico.Text == "Matias")
+                string nombreMedico = txtNombreMedico.Text;
+                var response = "http://apigalenos.herokuapp.com/medicos/buscar_por_nombre"
+                       .PostUrlEncodedAsync(new { nombre = nombreMedico })
+                       .ReceiveJson();
+                try
+                {
+                    string result = response.Result.ToString();
+                    if (result != "false")
+                    {
+                        lblMensaje1.Text = response.Result.ToString();
+                        Session["Medicos"] = result;
+                    }
+                    else
+                    {
+                        if (result == null)
+                        {
+                            lblMensaje1.Text = "No se encontró el Medico buscado.";
+                        }
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    lblMensaje1.Text = "Servicio inhabilitado, intente más tarde o vaya a la posta jeje salu2.";
+                }
+                
+                if (txtNombreMedico.Text == "Matias")
                 {
                     MultiView1.ActiveViewIndex = 0;
                 }

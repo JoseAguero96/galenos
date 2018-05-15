@@ -27,17 +27,6 @@
             <asp:MultiView ID="MultiView1" runat="server">
                 <asp:View ID="viewTabla" runat="server">
                     <asp:Panel ID="PanTabla" runat="server" BackColor="#CCFFFF" Height="127px">
-                        <asp:GridView ID="gridProfesionales" runat="server" DataSourceID="Usuarios" AutoGenerateColumns="False" Width="794px" >
-                            <Columns>
-                                <asp:BoundField DataField="nombre" HeaderText="Profesional" />
-                                <asp:BoundField DataField="area" HeaderText="Area de Atención" />
-                                
-                                <asp:BoundField HeaderText="Agenda" />
-                                
-                            </Columns>
-                        </asp:GridView>
-                        
-
                     </asp:Panel>
                 </asp:View>
                 <asp:View ID="viewMedico" runat="server">
@@ -45,7 +34,7 @@
                         <br />
                         &nbsp;<asp:Label ID="lblApellidoMedico" runat="server" Align="Left" Text="Ingrese Apellido del Medico:"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:TextBox ID="txtApellidoMedico"  runat="server"  CssClass="auto-style2" Width="282px" class="textbox"></asp:TextBox>
+                        <asp:TextBox ID="txtNombreMedico"  runat="server"  CssClass="auto-style2" Width="282px" class="textbox"></asp:TextBox>
                         <br />
                         <br />
                         &nbsp;<asp:Button ID="btnBuscar" runat="server" Text="Buscar Medico" OnClick="btnBuscar_Click" CssClass="botonlargo" />

@@ -67,15 +67,6 @@ namespace Galenos {
         protected global::System.Web.UI.WebControls.Panel PanTabla;
         
         /// <summary>
-        /// Control gridProfesionales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridProfesionales;
-        
-        /// <summary>
         /// Control viewMedico.
         /// </summary>
         /// <remarks>
@@ -103,13 +94,13 @@ namespace Galenos {
         protected global::System.Web.UI.WebControls.Label lblApellidoMedico;
         
         /// <summary>
-        /// Control txtApellidoMedico.
+        /// Control txtNombreMedico.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoMedico;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreMedico;
         
         /// <summary>
         /// Control btnBuscar.
