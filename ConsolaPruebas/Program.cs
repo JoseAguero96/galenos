@@ -11,8 +11,9 @@ namespace ConsolaPruebas
     {
         public partial class Medico
         {
-            public int id { get; set; }
+            public int? id { get; set; }
             public string nombre { get; set; }
+            public string area_id { get; set; }
             public string foto { get; set; }
 
         }
@@ -20,10 +21,12 @@ namespace ConsolaPruebas
         static void Main(string[] args)
         {
             Medico medico = new Medico();
+            medico.id = 10019;
             medico.foto = "ninguna";
-            medico.nombre = "PruebaPost";
+            medico.nombre = "lE maTIAS sE LA COMÉ atravesé";
+            medico.area_id = "10003";
             ConexionApi conexion = new ConexionApi();
-            Console.WriteLine(conexion.ejecutarLlamada("POST","medicos","", medico));
+            Console.WriteLine(conexion.ejecutarLlamada("DELETE","medicos/10019","", medico));
             Console.ReadKey();
          }
     }

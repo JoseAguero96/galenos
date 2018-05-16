@@ -117,3 +117,5 @@ C:\Portafolio\galenos\Galenos\obj\Debug\Galenos.csprojResolveAssemblyReference.c
 C:\Portafolio\galenos\Galenos\obj\Debug\Galenos.csproj.CoreCompileInputs.cache
 C:\Portafolio\galenos\Galenos\obj\Debug\Galenos.dll
 C:\Portafolio\galenos\Galenos\obj\Debug\Galenos.pdb
+C:\Users\cetecom\Desktop\galenos\Galenos\bin\Biblioteca.dll
+C:\Users\cetecom\Desktop\galenos\Galenos\bin\Biblioteca.pdb
