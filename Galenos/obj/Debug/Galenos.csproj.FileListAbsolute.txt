@@ -75,7 +75,6 @@ C:\Users\CETECOM\Desktop\galenos\Galenos\bin\Microsoft.CodeDom.Providers.DotNetC
 C:\Users\CETECOM\Desktop\galenos\Galenos\bin\Newtonsoft.Json.xml
 C:\Users\CETECOM\Desktop\galenos\Galenos\obj\Debug\Galenos.csprojResolveAssemblyReference.cache
 C:\Users\CETECOM\Desktop\galenos\Galenos\obj\Debug\Galenos.csproj.CoreCompileInputs.cache
-C:\Users\CETECOM\Desktop\galenos\Galenos\obj\Debug\Galenos.csproj.CopyComplete
 C:\Users\CETECOM\Desktop\galenos\Galenos\obj\Debug\Galenos.dll
 C:\Users\CETECOM\Desktop\galenos\Galenos\obj\Debug\Galenos.pdb
 C:\Portafolio\galenos\Galenos\bin\ApplicationInsights.config

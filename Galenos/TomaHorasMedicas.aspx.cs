@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -38,36 +39,23 @@ namespace Galenos
             else
             {
                 string nombreMedico = txtNombreMedico.Text;
-                var response = "http://apigalenos.herokuapp.com/medicos/buscar_por_nombre"
-                       .PostUrlEncodedAsync(new { nombre = nombreMedico })
-                       .ReceiveJson();
+                var url = string.Format("http://192.168.43.167:3000/buscar_por_nombre?nombre={0}", nombreMedico);
+                
                 try
                 {
-                    string result = response.Result.ToString();
-                    if (result != "false")
+                    var json = new WebClient().DownloadString(url);
+                    if(json != null)
                     {
-                        lblMensaje1.Text = response.Result.ToString();
-                        Session["Medicos"] = result;
-                    }
-                    else
-                    {
-                        if (result == null)
-                        {
-                            lblMensaje1.Text = "No se encontró el Medico buscado.";
-                        }
-                    }
-                    
+                        Session["Medico"] = json;
+                        MultiView1.ActiveViewIndex = 0;
+                    }   
                 }
                 catch (Exception ex)
                 {
                     lblMensaje1.Text = "Servicio inhabilitado, intente más tarde o vaya a la posta jeje salu2.";
                 }
                 
-                if (txtNombreMedico.Text == "Matias")
-                {
-                    MultiView1.ActiveViewIndex = 0;
-                }
-
+                
 
             }
         }
