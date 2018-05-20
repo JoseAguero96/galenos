@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Biblioteca;
+using Newtonsoft.Json;
+
 namespace Galenos
 {
     public partial class TomaHorasMedicas : System.Web.UI.Page
@@ -52,11 +54,16 @@ namespace Galenos
 
                 try
                 {
-                    var json = conexion.ejecutarLlamada("GET", "buscar_por_nombre?nombre="+nombreMedico, "", null);
+                    //comentario para pruebas
+                    //var json = conexion.ejecutarLlamada("GET", "buscar_por_nombre?nombre="+nombreMedico, "", null);
+                    var json = "{ 'id':8,'nombre':'Jose','created_at':'2018-04-23T23:10:51.229Z','updated_at':'2018-04-23T23:10:51.229Z','area_id':1}";
                     if (json != null)
                     {
-                        Session["Medico"] = json;
-                        MultiView1.ActiveViewIndex = 0;
+                        Medico medi = JsonConvert.DeserializeObject<Medico>(json);
+                        Session["Medico_id"] = medi.id;
+                        Session["Medico_nombre"] = medi.nombre;
+                        Session["Medico_area"] = medi.area_id;
+                        Response.Redirect("TomaHora.aspx");
                     }
                 }
                 catch (Exception ex)

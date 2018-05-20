@@ -21,6 +21,7 @@ namespace Galenos
         public int id { get; set; }
         public string nombre { get; set; }
         public string foto { get; set; }
+        public string area_id { get; set; }
 
     }
     public partial class Profesionales : System.Web.UI.Page
