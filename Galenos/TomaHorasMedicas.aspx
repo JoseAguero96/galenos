@@ -27,6 +27,9 @@
             <asp:MultiView ID="MultiView1" runat="server">
                 <asp:View ID="viewTabla" runat="server">
                     <asp:Panel ID="PanTabla" runat="server" BackColor="#CCFFFF" Height="127px">
+                        &nbsp;
+                        <asp:Label ID="lblNombreMedicoBuscado" runat="server" Text="Nombre de Medico : "></asp:Label>
+                        <asp:TextBox ID="txtNomMedico" runat="server"></asp:TextBox>
                     </asp:Panel>
                 </asp:View>
                 <asp:View ID="viewMedico" runat="server">

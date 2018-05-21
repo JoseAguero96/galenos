@@ -2,33 +2,45 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Biblioteca;
+using Newtonsoft.Json;
 
 namespace Galenos
 {
     public partial class TomaHorasMedicas : System.Web.UI.Page
     {
+        #region Carga Inicial de la Pagina
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
+        #endregion
 
+        #region Boton buscar por nombre de medico
         protected void btnHoraMedico_Click(object sender, EventArgs e)
         {
             lblMensaje1.Text = "";
             txtNombreMedico.Text = "";
             MultiView1.ActiveViewIndex = 1;
         }
+        #endregion
 
+
+        #region Boton buscar por Area de medico
         protected void btnPorArea_Click(object sender, EventArgs e)
         {
             lblMensaje2.Text = "";
             ddlArea.SelectedIndex = 0;
             MultiView1.ActiveViewIndex = 2;
         }
+        #endregion
 
+
+        #region Boton buscar dentro de busqueda por nombre Medico
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             if (txtNombreMedico.Text == "")
@@ -38,40 +50,35 @@ namespace Galenos
             else
             {
                 string nombreMedico = txtNombreMedico.Text;
-                var response = "http://apigalenos.herokuapp.com/medicos/buscar_por_nombre"
-                       .PostUrlEncodedAsync(new { nombre = nombreMedico })
-                       .ReceiveJson();
+                ConexionApi conexion = new ConexionApi();
+
                 try
                 {
-                    string result = response.Result.ToString();
-                    if (result != "false")
+                    //comentario para pruebas
+                    //var json = conexion.ejecutarLlamada("GET", "buscar_por_nombre?nombre="+nombreMedico, "", null);
+                    var json = "{ 'id':8,'nombre':'Jose','created_at':'2018-04-23T23:10:51.229Z','updated_at':'2018-04-23T23:10:51.229Z','area_id':1}";
+                    if (json != null)
                     {
-                        lblMensaje1.Text = response.Result.ToString();
-                        Session["Medicos"] = result;
+                        Medico medi = JsonConvert.DeserializeObject<Medico>(json);
+                        Session["Medico_id"] = medi.id;
+                        Session["Medico_nombre"] = medi.nombre;
+                        Session["Medico_area"] = medi.area_id;
+                        Response.Redirect("TomaHora.aspx");
                     }
-                    else
-                    {
-                        if (result == null)
-                        {
-                            lblMensaje1.Text = "No se encontró el Medico buscado.";
-                        }
-                    }
-                    
                 }
                 catch (Exception ex)
                 {
+                    ex.Message.ToString();
                     lblMensaje1.Text = "Servicio inhabilitado, intente más tarde o vaya a la posta jeje salu2.";
                 }
                 
-                if (txtNombreMedico.Text == "Matias")
-                {
-                    MultiView1.ActiveViewIndex = 0;
-                }
-
+                
 
             }
         }
+        #endregion
 
+        #region Boton buscar dentro de busqueda por area
         protected void btnBuscarArea_Click(object sender, EventArgs e)
         {
             if (ddlArea.SelectedIndex == 0)
@@ -90,11 +97,11 @@ namespace Galenos
                     Session["Medicos"] = result;
                 }
 
-                lblMensaje1.Text = response.Result.ToString();
+                lblMensaje2.Text = response.Result.ToString();
 
             }
         }
+        #endregion
 
-        
     }
 }

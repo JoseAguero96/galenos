@@ -118,6 +118,7 @@
     </Content>
     <Content Include="Profesionales.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="RegistroDeHora.aspx" />
     <Content Include="Site.Master" />
     <Content Include="fonts\Roboto-Black.ttf" />
     <Content Include="fonts\Roboto-BlackItalic.ttf" />
@@ -142,6 +143,7 @@
     <Content Include="Login.aspx" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="TomaHora.aspx" />
     <Content Include="TomaHorasMedicas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -174,12 +176,26 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RegistroDeHora.aspx.cs">
+      <DependentUpon>RegistroDeHora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroDeHora.aspx.designer.cs">
+      <DependentUpon>RegistroDeHora.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TomaHora.aspx.cs">
+      <DependentUpon>TomaHora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TomaHora.aspx.designer.cs">
+      <DependentUpon>TomaHora.aspx</DependentUpon>
     </Compile>
     <Compile Include="TomaHorasMedicas.aspx.cs">
       <DependentUpon>TomaHorasMedicas.aspx</DependentUpon>
@@ -189,7 +205,12 @@
       <DependentUpon>TomaHorasMedicas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">
+      <Project>{7d221f60-3863-445a-ad81-5748e8c5d755}</Project>
+      <Name>Biblioteca</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
