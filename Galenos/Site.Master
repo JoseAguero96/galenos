@@ -20,7 +20,7 @@
 	<header>
 		<div id="top">
 			<div><h1>Galenos</h1></div>
-            <asp:Button ID="btnRegistro" runat="server" Text="Registro" />
+            <asp:Button ID="btnRegistro" runat="server" Text="Registro" OnClick="btnRegistro_Click"  />
             <asp:Button ID="btnIngreso" runat="server" Text="Ingreso" OnClick="btnIngreso_Click" />
             <asp:Label ID="lblCliente" runat="server" Text=""></asp:Label>
 		    <asp:Button ID="btnSalir" runat="server" Text="Salir" OnClick="btnSalir_Click" />

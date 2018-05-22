@@ -27,7 +27,7 @@
     <br />
     <asp:Label ID="lblMensaje" runat="server"></asp:Label>
     <br />
-    <asp:Label ID="lblPrevision" runat="server" Text="Seleccione Previción"></asp:Label>
+    <asp:Label ID="lblPrevision" runat="server" Text="Seleccione Previsión"></asp:Label>
     <br />
     <asp:DropDownList ID="DropDownList1" runat="server">
         <asp:ListItem Selected="True" Value="0">Particular</asp:ListItem>
@@ -45,6 +45,21 @@
     <asp:Button ID="btnVolver" runat="server" OnClick="btnVolver_Click" Text="Volver" />
     <br />
     <br />
-    <asp:Label ID="lblMen" runat="server"></asp:Label>
+    <asp:Label ID="lblMen" runat="server" style="display:none">asd</asp:Label>
     <br />
+
+    <script>
+        $(document).ready(function () {
+            var exito = $('#ContentPlaceHolder1_lblMen').prop('innerHTML');
+            if (exito=='true') {
+                 swal('', 'Usuario Registrado Éxitosamente', 'success');
+            } else if (exito == 'null') {
+                //nada
+            } else {
+                swal('', 'Algo salió mal, asegurate de ingresar los datos necesarios', 'error');
+            };
+        });
+    </script>
 </asp:Content>
+
+
