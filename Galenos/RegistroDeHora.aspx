@@ -29,9 +29,13 @@
         <br />
         <br />
         <asp:Label ID="lblnombre2" runat="server" Text="Nombre del Paciente :"></asp:Label>
+        &nbsp;<asp:Label ID="lblnombrepaciente" runat="server"></asp:Label>
         <br />
-        <asp:Label ID="lblrutPaciente" runat="server" Text="Rut del paciente :"></asp:Label>
+        <asp:Label ID="lblrutdelPaciente" runat="server" Text="Rut del paciente :"></asp:Label>
+        &nbsp;<asp:Label ID="lblrutpaciente" runat="server"></asp:Label>
         <br />
+        <br />
+        <asp:Button ID="btnReserva" runat="server" OnClick="btnReserva_Click" Text="Realizar la reserva" />
         <br />
         <br />
         <br />

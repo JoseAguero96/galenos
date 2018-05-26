@@ -21,6 +21,7 @@ namespace Galenos
             {
                 btnSalir.Visible = false;
             }
+            
         }
 
         protected void btnIngreso_Click(object sender, EventArgs e)

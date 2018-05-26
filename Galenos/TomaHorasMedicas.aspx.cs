@@ -43,7 +43,7 @@ namespace Galenos
         #region Boton buscar dentro de busqueda por nombre Medico
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtNombreMedico.Text == "")
+            if (txtNombreMedico.Text == "" )
             {
                 lblMensaje1.Text = "Apellido de medico Obligatorio*";
             }
@@ -55,9 +55,17 @@ namespace Galenos
                 try
                 {
                     //comentario para pruebas
-                    //var json = conexion.ejecutarLlamada("GET", "buscar_por_nombre?nombre="+nombreMedico, "", null);
-                    var json = "{ 'id':8,'nombre':'Jose','created_at':'2018-04-23T23:10:51.229Z','updated_at':'2018-04-23T23:10:51.229Z','area_id':1}";
-                    if (json != null)
+                    var json = conexion.ejecutarLlamada("GET", "buscar_por_nombre?nombre="+nombreMedico, "", null);
+                    List<Medico> medicos = new List<Medico>();
+                    medicos = JsonConvert.DeserializeObject<List<Medico>>(json);
+                    Session["listaMedicos"] = medicos;
+                    Response.Redirect("ListaMedicos.aspx");
+                    
+
+                    
+
+
+                    /*if (json != null)
                     {
                         Medico medi = JsonConvert.DeserializeObject<Medico>(json);
                         Session["Medico_id"] = medi.id;
@@ -65,6 +73,7 @@ namespace Galenos
                         Session["Medico_area"] = medi.area_id;
                         Response.Redirect("TomaHora.aspx");
                     }
+                    */
                 }
                 catch (Exception ex)
                 {
@@ -87,17 +96,36 @@ namespace Galenos
             }
             else
             {
-                int area = ddlArea.SelectedIndex;
-                var response = "http://192.168.43.210:3000/buscar-area/"
-                       .PostUrlEncodedAsync(new { Area = area })
-                       .ReceiveJson();
-                string result = response.Result.ToString();
-                if (result != "false")
-                {
-                    Session["Medicos"] = result;
-                }
 
-                lblMensaje2.Text = response.Result.ToString();
+                string nombreMedico = txtNombreMedico.Text;
+                ConexionApi conexion = new ConexionApi();
+
+                try
+                {
+                    var json = conexion.ejecutarLlamada("GET", "buscar_por_area?area=" + ddlArea.SelectedIndex, "", null);
+                    List<Medico> medicos = new List<Medico>();
+                    medicos = JsonConvert.DeserializeObject<List<Medico>>(json);
+                    Session["listaMedicos"] = medicos;
+                    Response.Redirect("ListaMedicos.aspx");
+
+
+                    //int area = ddlArea.SelectedIndex;
+                    //var response = "http://192.168.43.210:3000/buscar-area/"
+                    //       .PostUrlEncodedAsync(new { Area = area })
+                    //       .ReceiveJson();
+                    //string result = response.Result.ToString();
+                    //if (result != "false")
+                    //{
+                    //    Session["Medicos"] = result;
+                    //}
+
+                    //lblMensaje2.Text = response.Result.ToString();
+                }
+                catch (Exception)
+                {
+                    lblMensaje2.Text = "Servicio inhabilitado, intente más tarde o vaya a la posta jeje salu2.";
+                }
+                
 
             }
         }

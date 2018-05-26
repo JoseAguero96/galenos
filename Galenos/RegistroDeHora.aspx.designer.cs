@@ -139,12 +139,39 @@ namespace Galenos {
         protected global::System.Web.UI.WebControls.Label lblnombre2;
         
         /// <summary>
-        /// Control lblrutPaciente.
+        /// Control lblnombrepaciente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblrutPaciente;
+        protected global::System.Web.UI.WebControls.Label lblnombrepaciente;
+        
+        /// <summary>
+        /// Control lblrutdelPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblrutdelPaciente;
+        
+        /// <summary>
+        /// Control lblrutpaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblrutpaciente;
+        
+        /// <summary>
+        /// Control btnReserva.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnReserva;
     }
 }
