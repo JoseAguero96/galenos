@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Flurl.Http;
+using Biblioteca;
 
 namespace Galenos
 {
@@ -17,17 +18,18 @@ namespace Galenos
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            ConexionApi conexion = new ConexionApi();
+            
             string rut = txtRut.Text;
             string pass = txtPassword.Text;
-            var response = "http://192.168.43.210:3000/logear/"
-                   .PostUrlEncodedAsync(new { rut = rut, password = pass })
-                   .ReceiveString();
-            string result = response.Result.ToString();
+            var json = new { rut = rut, password = pass };
+            var result = conexion.ejecutarLlamada("POST", "logear", "", json);
+
             if (result != "false")
             {
                 Session["cliente"] = result;
             }
-            lblMen.Text = response.Result.ToString();
+            lblMen.Text = result.ToString();
         }
     }
 }
