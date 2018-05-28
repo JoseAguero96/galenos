@@ -50,7 +50,7 @@ namespace Galenos
                     {
                         Session["cliente"] = result;
                     }
-                    lblMen.Text = result;
+                    lblMen.Text = "true";
                 }
                 catch (Exception ex)
                 {
