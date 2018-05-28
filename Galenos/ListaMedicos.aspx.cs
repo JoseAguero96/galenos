@@ -1,9 +1,15 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Biblioteca;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Galenos
 {
@@ -13,7 +19,7 @@ namespace Galenos
         {
             //toma valor de la session con los medicos, para una variable de tipo lista.
             List<Medico> medicos = Session["listaMedicos"] as List<Medico>;
-
+            ConexionApi conexion = new ConexionApi();
             if (medicos.Count == 0)
             {
                 txtnombre.Visible = false;
@@ -28,13 +34,19 @@ namespace Galenos
             }
             else
             {
+
                 foreach (Medico item in medicos)
                 {
+                    var area = conexion.ejecutarLlamada("GET", "areas/" + item.area_id, "", "");
 
-                    gvmedicos.DataSource = medicos;
-                    gvmedicos.DataBind();
+                    JObject jObject = JObject.Parse(area);
+                    JToken nombreArea = jObject["nombre"];
 
+                    item.nombre_area = nombreArea.ToString();
                 }
+
+                gvmedicos.DataSource = medicos;
+                gvmedicos.DataBind();
             }
 
 
@@ -47,10 +59,15 @@ namespace Galenos
         {
             int numero = gvmedicos.SelectedIndex;
             string nombre = gvmedicos.Rows[numero].Cells[2].Text.ToString();
-            string area = gvmedicos.Rows[numero].Cells[4].Text;
-            //lblprueba.Text = nombre;
+            string area = gvmedicos.Rows[numero].Cells[3].Text;
             txtnombre.Text = nombre;
-            txtarea.Text = area.ToString();
+
+            string textoOriginal = area;
+
+            string textResultado = Regex.Replace(textoOriginal, @"[^a-zA-z0-9 ]+", "");
+            
+
+            txtarea.Text = textResultado.ToString(); ;
         }
 
         protected void btntomarhora_Click(object sender, EventArgs e)

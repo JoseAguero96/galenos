@@ -52,8 +52,6 @@
                         &nbsp;<asp:Label ID="lblArea" runat="server" Text="Seleccione el Area para la reserva:"></asp:Label>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <asp:DropDownList ID="ddlArea" runat="server" Height="16px" Width="286px">
-                            <asp:ListItem Selected="True" Value="-1">Seleccione Area</asp:ListItem>
-                            <asp:ListItem Value="0">Cardiologia</asp:ListItem>
                         </asp:DropDownList>
                         <br />
                         <br />

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListaMedicos.aspx.cs" Inherits="Galenos.ListaMedicos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" ResponseEncoding="ISO-8859-1" CodeBehind="ListaMedicos.aspx.cs" Inherits="Galenos.ListaMedicos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -12,10 +13,10 @@
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="id" Visible="False" />
                 <asp:BoundField DataField="nombrecompleto" HeaderText="Nombre Profesional" />
-                <asp:BoundField HeaderText="foto" Visible="False" />
-                <asp:BoundField DataField="area_id" HeaderText="Area del Medico" />
-                <asp:BoundField DataField="nombre" HeaderText="Nombre de Medico" />
                 <asp:BoundField DataField="nombre_area" HeaderText="Nombre Area" />
+                <asp:BoundField HeaderText="foto" Visible="False" />
+                <asp:BoundField DataField="area_id" HeaderText="Area del Medico" Visible="False" />
+                <asp:BoundField DataField="nombre" HeaderText="Nombre de Medico" />
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
