@@ -35,36 +35,36 @@ namespace Galenos
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            PopulateGridView();
+            //PopulateGridView();
         }
 
-        private void PopulateGridView()
-        {
-            string apiUrl = "http://apigalenos.herokuapp.com/medicos";
-            object input = new
-            {
-                //Name = txtName.Text.Trim(),
-            };
-            string inputJson = (new JavaScriptSerializer()).Serialize(input);
-            WebClient client = new WebClient();
-            client.Headers["Content-type"] = "application/json";
-            client.Encoding = Encoding.UTF8;
-            StreamReader json1 = new StreamReader(client.OpenRead(apiUrl));
-            string json = json1.ReadToEnd();
+        //private void PopulateGridView()
+        //{
+        //    string apiUrl = "http://apigalenos.herokuapp.com/";
+        //    object input = new
+        //    {
+        //        Name = txtName.Text.Trim(),
+        //    };
+        //    string inputJson = (new JavaScriptSerializer()).Serialize(input);
+        //    WebClient client = new WebClient();
+        //    client.Headers["Content-type"] = "application/json";
+        //    client.Encoding = Encoding.UTF8;
+        //    StreamReader json1 = new StreamReader(client.OpenRead(apiUrl));
+        //    string json = json1.ReadToEnd();
 
-            dynamic jsonObj = JsonConvert.DeserializeObject(json);
-            //var nombre = jsonObj[0]["nombre"].ToString();
-            var nombres = new ArrayList();
-            foreach (var item in jsonObj)
-            {
-                Medico medico = new Medico();
-                medico.nombre = item["nombre"];
-                medico.id = item["id"];
-                medico.foto = "https://image.ibb.co/fZW1Jn/seba.jpg";
-                nombres.Add(medico);
-            }
-            gvProfesionales.DataSource = nombres;
-            gvProfesionales.DataBind();
-        }
+        //    dynamic jsonObj = JsonConvert.DeserializeObject(json);
+        //    var nombre = jsonObj[0]["nombre"].ToString();
+        //    var nombres = new ArrayList();
+        //    foreach (var item in jsonObj)
+        //    {
+        //        Medico medico = new Medico();
+        //        medico.nombre = item["nombre"];
+        //        medico.id = item["id"];
+        //        medico.foto = "https://image.ibb.co/fZW1Jn/seba.jpg";
+        //        nombres.Add(medico);
+        //    }
+        //    gvProfesionales.DataSource = nombres;
+        //    gvProfesionales.DataBind();
+        //}
     }
 }

@@ -24,9 +24,8 @@ namespace Galenos
             lblFecha.Text = Session["fecha_hora"].ToString();
             lblHora.Text = Session["hora_reserva_string"].ToString();
             lblArea.Text = Session["Medico_area"].ToString();
-            //lblrutdelPaciente.Text = Session["rut_cliente"].ToString();
-            //falta recuperar datos
-            //lblnombrepaciente.Text = Session["rut_cliente"].ToString();
+            lblrutpaciente.Text = Session["user_rut"].ToString();
+            lblnombrepaciente.Text = Session["user_fullname"].ToString();
 
 
 

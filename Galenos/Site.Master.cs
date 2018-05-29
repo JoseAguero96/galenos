@@ -11,12 +11,12 @@ namespace Galenos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["cliente"] != null)
+            if (Session["user_fullname"] != null)
             {
                 btnIngreso.Visible = false;
                 btnRegistro.Visible = false;
                 btnSalir.Visible = true;
-                lblCliente.Text = (string)Session["cliente"];
+                lblCliente.Text = (string)Session["user_fullname"];
             }else
             {
                 btnSalir.Visible = false;
@@ -31,7 +31,7 @@ namespace Galenos
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
-            Session.Remove("cliente");
+            Session.Remove("user_fullname");
             Response.Redirect("Inicio.aspx");
         }
 

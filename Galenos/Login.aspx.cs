@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Flurl.Http;
 using Biblioteca;
+using Newtonsoft.Json;
 
 namespace Galenos
 {
@@ -27,7 +28,19 @@ namespace Galenos
 
             if (result != "false")
             {
-                Session["cliente"] = result;
+                //Session["cliente"] = result;
+                var userjson = conexion.ejecutarLlamada("GET", "users/" + result, "", "");
+                Usuario user = JsonConvert.DeserializeObject<Usuario>(userjson);
+                Session["user_id"] = user.id;
+                Session["user_username"] = user.username;
+                Session["user_email"] = user.email;
+                Session["user_fullname"] = user.fullName;
+                Session["user_phone"] = user.phone_number;
+                Session["user_rut"] = user.rut;
+
+
+
+
             }
             lblMen.Text = result.ToString();
         }

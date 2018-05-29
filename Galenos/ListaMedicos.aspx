@@ -16,7 +16,7 @@
                 <asp:BoundField DataField="nombre_area" HeaderText="Nombre Area" />
                 <asp:BoundField HeaderText="foto" Visible="False" />
                 <asp:BoundField DataField="area_id" HeaderText="Area del Medico" Visible="False" />
-                <asp:BoundField DataField="nombre" HeaderText="Nombre de Medico" />
+                <asp:BoundField DataField="nombre" HeaderText="Nombre de Medico" Visible="False" />
             </Columns>
             <FooterStyle BackColor="White" ForeColor="#000066" />
             <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />

@@ -74,7 +74,7 @@ namespace Galenos
                     var json = conexion.ejecutarLlamada("GET", "buscar_por_nombre?nombre=" + nombreMedico, "", null);
                     List<Medico> medicos = new List<Medico>();
                     medicos = JsonConvert.DeserializeObject<List<Medico>>(json);
-                    Session[string.Format("listaMedicos")] = medicos;
+                    Session["listaMedicos"] = medicos;
                     Response.Redirect("ListaMedicos.aspx");
 
                 }

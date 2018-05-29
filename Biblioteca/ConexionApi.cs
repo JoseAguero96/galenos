@@ -13,7 +13,7 @@ namespace Biblioteca
     {
         public String ejecutarLlamada(String metodo, String a_consultar, String contenido, Object objeto)
         {
-            String url = "apigalenos.herokuapp.com/";
+            String url = "http://apigalenos.herokuapp.com/";
             String responseString = "";
             HttpResponseMessage response;
             HttpClient http = new HttpClient();

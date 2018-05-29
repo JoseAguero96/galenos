@@ -31,6 +31,15 @@ namespace Galenos {
         protected global::System.Web.UI.WebControls.Label lblRegistro;
         
         /// <summary>
+        /// Control Panel2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel2;
+        
+        /// <summary>
         /// Control lbldatos.
         /// </summary>
         /// <remarks>
@@ -121,22 +130,31 @@ namespace Galenos {
         protected global::System.Web.UI.WebControls.Label lblArea;
         
         /// <summary>
-        /// Control lbldatosusuario.
+        /// Control Panel3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbldatosusuario;
+        protected global::System.Web.UI.WebControls.Panel Panel3;
         
         /// <summary>
-        /// Control lblnombre2.
+        /// Control lbldatosusuario0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblnombre2;
+        protected global::System.Web.UI.WebControls.Label lbldatosusuario0;
+        
+        /// <summary>
+        /// Control lblnombre3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblnombre3;
         
         /// <summary>
         /// Control lblnombrepaciente.
@@ -148,13 +166,13 @@ namespace Galenos {
         protected global::System.Web.UI.WebControls.Label lblnombrepaciente;
         
         /// <summary>
-        /// Control lblrutdelPaciente.
+        /// Control lblrutdelPaciente0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblrutdelPaciente;
+        protected global::System.Web.UI.WebControls.Label lblrutdelPaciente0;
         
         /// <summary>
         /// Control lblrutpaciente.
