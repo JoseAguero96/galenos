@@ -18,6 +18,10 @@ namespace Galenos
         #region Carga Inicial de la Pagina
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["user_id"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             if (!IsPostBack)
             {
                 cargarAreas();

@@ -205,4 +205,3 @@ C:\Users\Sebastian\Desktop\galenos\Galenos\obj\Debug\Galenos.csproj.CoreCompileI
 C:\Users\Sebastian\Desktop\galenos\Galenos\obj\Debug\Galenos.csproj.CopyComplete
 C:\Users\Sebastian\Desktop\galenos\Galenos\obj\Debug\Galenos.dll
 C:\Users\Sebastian\Desktop\galenos\Galenos\obj\Debug\Galenos.pdb
-C:\Users\CETECOM\Desktop\galenos\Galenos\obj\Debug\Galenos.csproj.CopyComplete

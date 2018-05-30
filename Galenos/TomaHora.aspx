@@ -17,7 +17,8 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblSeleccionarHora" runat="server" Text="Seleccione día para la hora medica"></asp:Label>
         <br />
         <br />
-        <asp:Calendar ID="calendario" runat="server" Align="right" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" OnSelectionChanged="calendario_SelectionChanged" Width="350px">
+        <br />
+        <asp:Calendar ID="calendario" runat="server" Align="right" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" OnSelectionChanged="calendario_SelectionChanged" Width="350px" FirstDayOfWeek="Monday">
             <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
             <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
             <OtherMonthDayStyle ForeColor="#999999" />
@@ -28,7 +29,8 @@
         &nbsp;<asp:Label ID="lblmsg" runat="server" Text="Horas Disponibles para el Día :" Visible="False"></asp:Label>
         <asp:Label ID="lblFecha" runat="server" Visible="False"></asp:Label>
         <br />
-        &nbsp;<br /> &nbsp;<asp:Label ID="lblhoras" runat="server" Text="Seleccione Hora de Atención :" Visible="False"></asp:Label>
+        &nbsp;<asp:Label ID="lblerror" runat="server" ForeColor="Red"></asp:Label>
+        <br /> &nbsp;<asp:Label ID="lblhoras" runat="server" Text="Seleccione Hora de Atención :" Visible="False"></asp:Label>
 &nbsp;
         <asp:DropDownList ID="ddlHoras" runat="server" AutoPostBack="True" Height="16px" OnSelectedIndexChanged="ddlHoras_SelectedIndexChanged" Visible="False" Width="160px">
             <asp:ListItem Selected="True" Value="-1">Seleccione..</asp:ListItem>

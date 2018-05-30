@@ -31,8 +31,14 @@ namespace Galenos
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
+            Session.Remove("user_id");
+            Session.Remove("user_username");
+            Session.Remove("user_email");
             Session.Remove("user_fullname");
+            Session.Remove("user_phone");
+            Session.Remove("user_rut");
             Response.Redirect("Inicio.aspx");
+            
         }
 
        

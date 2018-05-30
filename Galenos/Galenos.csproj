@@ -109,7 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\style.css" />
+    <Content Include="images\galenoslogo.png" />
     <Content Include="images\img1.jpg" />
+    <Content Include="images\off_icon.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="js\jquery.min.js" />
     <Content Include="ListaMedicos.aspx" />

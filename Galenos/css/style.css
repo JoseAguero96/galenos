@@ -65,6 +65,20 @@ body{
     cursor: pointer;
 }
 
+.logo{
+    background: url(../images/galenoslogo.png) no-repeat;
+    width: 283px;
+    height: 35px;
+    margin-top: 29px;
+}
+
+#btnSalir{
+    width: 50px !important;
+    height: 40px !important;
+    float: right;
+    /*background: url(../images/off_icon.png);*/
+}
+
 #icon-registro{
 	border-right: 1px solid #F1F1F1;
 	padding-right: 5px;

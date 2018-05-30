@@ -23,19 +23,30 @@ namespace Galenos
 
         protected void calendario_SelectionChanged(object sender, EventArgs e)
         {
-            DateTime fecha = Convert.ToDateTime(calendario.SelectedDate);
-            string cadenafecha = fecha.ToString("dddd d 'de' MMMM 'del' yyyy");
-            lblFecha.Text = string.Format(cadenafecha);
-            Session["fecha_hora"] = lblFecha.Text;
-            lblhoras.Visible = true;
-            lblhoras.Enabled = true;
-            ddlHoras.Visible = true;
-            ddlHoras.Enabled = true;
-            lblmsg.Visible = true;
-            lblFecha.Visible = true;
-
-            
-
+            if (calendario.SelectedDate <= DateTime.Now)
+            {
+                lblerror.Text = "La fecha no puede ser menor o igual al día de hoy.";
+                lblhoras.Visible = false;
+                lblhoras.Enabled = false;
+                ddlHoras.Visible = false;
+                ddlHoras.Enabled = false;
+                lblmsg.Visible = false;
+                lblFecha.Visible = false;
+            }
+            else
+            {
+                lblerror.Text = "";
+                DateTime fecha = Convert.ToDateTime(calendario.SelectedDate);
+                string cadenafecha = fecha.ToString("dddd d 'de' MMMM 'del' yyyy");
+                lblFecha.Text = string.Format(cadenafecha);
+                Session["fecha_hora"] = lblFecha.Text;
+                lblhoras.Visible = true;
+                lblhoras.Enabled = true;
+                ddlHoras.Visible = true;
+                ddlHoras.Enabled = true;
+                lblmsg.Visible = true;
+                lblFecha.Visible = true;
+            }
         }
 
         protected void ddlHoras_SelectedIndexChanged(object sender, EventArgs e)

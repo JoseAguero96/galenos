@@ -48,7 +48,7 @@ namespace Galenos
                     string result = conexion.ejecutarLlamada("POST", "registrar_usuario", "", jsonObject);
                     if (result != "false")
                     {
-                        Session["cliente"] = result;
+                        Response.Redirect("Login.aspx");
                     }
                     lblMen.Text = "true";
                 }
