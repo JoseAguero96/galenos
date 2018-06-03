@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Biblioteca;
 
 namespace Galenos
 {
@@ -34,6 +35,22 @@ namespace Galenos
         protected void btnReserva_Click(object sender, EventArgs e)
         {
             //guardar reserva en la base de datos
+            int id_medico = int.Parse(Session["Medico_id"].ToString());
+            int id_usuario = int.Parse(Session["user_id"].ToString());
+            DateTime fecha = DateTime.Parse(Session["fecha_hora"].ToString());
+            DateTime Hora = DateTime.Parse(Session["hora_reserva_string"].ToString());
+
+            try
+            {
+                ConexionApi conexion = new ConexionApi();
+                var json = new { idMedico = id_medico, idUsuario = id_usuario,fechaReserva = fecha, horaReserva = Hora };
+                var result = conexion.ejecutarLlamada("POST", "Registrar", "", json);
+            }
+            catch (Exception)
+            {
+                //Muestra Mensaje
+            }
+
         }
     }
 }

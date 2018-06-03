@@ -60,14 +60,19 @@ namespace Galenos
             int numero = gvmedicos.SelectedIndex;
             string nombre = gvmedicos.Rows[numero].Cells[2].Text.ToString();
             string area = gvmedicos.Rows[numero].Cells[3].Text;
+            string idMedico = gvmedicos.Rows[numero].Cells[1].Text.ToString(); ;
             txtnombre.Text = nombre;
+
+
+
 
             string textoOriginal = area;
 
             string textResultado = Regex.Replace(textoOriginal, @"[^a-zA-z0-9 ]+", "");
-            
 
-            txtarea.Text = textResultado.ToString(); ;
+
+            //txtarea.Text = textResultado.ToString(); ;
+            Session["Medico_id"] = idMedico;
         }
 
         protected void btntomarhora_Click(object sender, EventArgs e)

@@ -17,7 +17,7 @@
         </div>
         <div class="right_login">
             <h2>Ingreso Clientes</h2>
-            <asp:Label ID="lblUsername" runat="server" Text="R.U.T (11.111.111-1)"></asp:Label><br />
+            <asp:Label ID="lblUsername" runat="server" Text="R.U.T (12345678-9)"></asp:Label><br />
             <asp:TextBox ID="txtRut" runat="server"></asp:TextBox>
             <asp:Label ID="lblPassword" runat="server" Text="Contraseña"></asp:Label><br />
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>

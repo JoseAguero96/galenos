@@ -11,7 +11,7 @@
         <asp:GridView ID="gvmedicos"  runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Height="82px" style="margin-top: 1px" Width="789px" AutoGenerateSelectButton="True" EmptyDataText="no aplica" OnSelectedIndexChanged="gvmedicos_SelectedIndexChanged">
             <AlternatingRowStyle BorderStyle="Solid" />
             <Columns>
-                <asp:BoundField DataField="id" HeaderText="id" Visible="False" />
+                <asp:BoundField DataField="id" HeaderText="id" />
                 <asp:BoundField DataField="nombrecompleto" HeaderText="Nombre Profesional" />
                 <asp:BoundField DataField="nombre_area" HeaderText="Nombre Area" />
                 <asp:BoundField HeaderText="foto" Visible="False" />
