@@ -4,11 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using Biblioteca;
 namespace Galenos
 {
     public partial class TomaHora : System.Web.UI.Page
     {
+        ConexionApi conexion = new ConexionApi();
         protected void Page_Load(object sender, EventArgs e)
         {
             CargarView();
@@ -37,11 +38,18 @@ namespace Galenos
             {
                 lblerror.Text = "";
                 DateTime fecha = Convert.ToDateTime(calendario.SelectedDate);
+                Session["fecha_hora_datetime"] = fecha.Date.ToString();
                 string cadenafecha = fecha.ToString("dddd d 'de' MMMM 'del' yyyy");
                 lblFecha.Text = string.Format(cadenafecha);
                 Session["fecha_hora"] = lblFecha.Text;
                 lblhoras.Visible = true;
                 lblhoras.Enabled = true;
+                int id_medico = int.Parse(Session["Medico_id"].ToString());
+                int id_usuario = int.Parse(Session["user_id"].ToString());
+                var fecha_get = Session["fecha_hora_datetime"];
+                var Hora = Session["hora_reserva_string"];
+                var result = conexion.ejecutarLlamada("POST", "disponibles_por_medico?medico_id=" + id_medico + "&fechaReserva=" + fecha_get, "", null);
+                //aca bindea los datos all ddl, result sera algo como "[\"08:00\",\"08:30\",\"09:00\",\"09:30\"] (un string de un arreglo) 
                 ddlHoras.Visible = true;
                 ddlHoras.Enabled = true;
                 lblmsg.Visible = true;

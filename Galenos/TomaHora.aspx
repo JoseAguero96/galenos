@@ -34,12 +34,6 @@
 &nbsp;
         <asp:DropDownList ID="ddlHoras" runat="server" AutoPostBack="True" Height="16px" OnSelectedIndexChanged="ddlHoras_SelectedIndexChanged" Visible="False" Width="160px">
             <asp:ListItem Selected="True" Value="-1">Seleccione..</asp:ListItem>
-            <asp:ListItem Value="08:00">08:00</asp:ListItem>
-            <asp:ListItem Value="09:00">09:00</asp:ListItem>
-            <asp:ListItem>10:00</asp:ListItem>
-            <asp:ListItem>11:00</asp:ListItem>
-            <asp:ListItem>12:00</asp:ListItem>
-            <asp:ListItem>14:00</asp:ListItem>
         </asp:DropDownList>
         <br />
         <br />

@@ -69,7 +69,7 @@ namespace Galenos
             string textoOriginal = area;
 
             string textResultado = Regex.Replace(textoOriginal, @"[^a-zA-z0-9 ]+", "");
-
+            txtarea.Text = textResultado.Replace("237","í");
 
             //txtarea.Text = textResultado.ToString(); ;
             Session["Medico_id"] = idMedico;

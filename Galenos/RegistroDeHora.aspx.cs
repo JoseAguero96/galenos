@@ -37,15 +37,15 @@ namespace Galenos
             //guardar reserva en la base de datos
             int id_medico = int.Parse(Session["Medico_id"].ToString());
             int id_usuario = int.Parse(Session["user_id"].ToString());
-            DateTime fecha = DateTime.Parse(Session["fecha_hora"].ToString());
-            DateTime Hora = DateTime.Parse(Session["hora_reserva_string"].ToString());
+            var fecha = Session["fecha_hora_datetime"];
+            var Hora = Session["hora_reserva_string"];
 
             try
             {
                 ConexionApi conexion = new ConexionApi();
                 var json = new { idMedico = id_medico, idUsuario = id_usuario,fechaReserva = fecha, horaReserva = Hora };
-                var result = conexion.ejecutarLlamada("POST", "Registrar", "", json);
-            }
+                var result = conexion.ejecutarLlamada("POST", "registrar_hora", "", json);
+                }
             catch (Exception)
             {
                 //Muestra Mensaje
