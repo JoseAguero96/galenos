@@ -12,6 +12,7 @@ namespace Galenos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            MultiView1.ActiveViewIndex = 0;
             //Setear valor en blanco 
             lblNombre.Text = string.Empty;
             lblApellido.Text = string.Empty;
@@ -45,12 +46,20 @@ namespace Galenos
                 ConexionApi conexion = new ConexionApi();
                 var json = new { idMedico = id_medico, idUsuario = id_usuario,fechaReserva = fecha, horaReserva = Hora };
                 var result = conexion.ejecutarLlamada("POST", "registrar_hora", "", json);
-                }
+                MultiView1.ActiveViewIndex = 1;
+
+
+            }
             catch (Exception)
             {
                 //Muestra Mensaje
             }
 
+        }
+
+        protected void btnAceptar0_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
         }
     }
 }

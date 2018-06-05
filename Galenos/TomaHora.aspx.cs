@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Biblioteca;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
 namespace Galenos
 {
     public partial class TomaHora : System.Web.UI.Page
@@ -50,6 +53,14 @@ namespace Galenos
                 var Hora = Session["hora_reserva_string"];
                 var result = conexion.ejecutarLlamada("POST", "disponibles_por_medico?medico_id=" + id_medico + "&fechaReserva=" + fecha_get, "", null);
                 //aca bindea los datos all ddl, result sera algo como "[\"08:00\",\"08:30\",\"09:00\",\"09:30\"] (un string de un arreglo) 
+
+                var fechas = JsonConvert.DeserializeObject<List<string>>(result);
+
+                
+
+                ddlHoras.DataSource = fechas;
+                ddlHoras.DataBind();
+
                 ddlHoras.Visible = true;
                 ddlHoras.Enabled = true;
                 lblmsg.Visible = true;
