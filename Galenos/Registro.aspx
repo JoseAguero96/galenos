@@ -34,7 +34,9 @@
                 <asp:TextBox ID="txtRut" runat="server" CssClass="form-control" oninput="checkRut(this)"></asp:TextBox>
             </div>
         </div>
+        <p>
         <br />
+        </p>
         <div class="form-group row">
             <asp:Label ID="lblContrasenia" runat="server" Text="Contraseña" CssClass="col-sm-2 col-form-label required"></asp:Label>
             <br />

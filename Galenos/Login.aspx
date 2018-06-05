@@ -3,22 +3,15 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content grid">
-        <div class="left_login">
+        <div class=" jumbotron left_login" style="padding-top: 48px;margin-bottom:0px;">
             <img src="images/img_login.jpg" />
-            <h3>This is Photoshop's version</h3>
-
-            This is Photoshop's version  of Lorem Ipsum. Proin 
-            gravida nibh vel velit auctor aliquet. Aenean sollicitudin, 
-            lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem 
-            nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. 
-            Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. 
-            Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu 
-            egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+            <h3>Ingresa</h3>
+            Ingresa a nuestro sistema para acceder a la toma de horas online, de esta forma podrás verificar en tiempo real las horas disponible de cada medico en cada área. Si no tienes una cuenta, regístrate.
         </div>
         <div class="right_login">
             <h2>Ingreso Clientes</h2>
             <asp:Label ID="lblUsername" runat="server" Text="R.U.T (12345678-9)"></asp:Label><br />
-            <asp:TextBox ID="txtRut" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtRut" runat="server"  oninput="checkRut(this)"></asp:TextBox>
             <asp:Label ID="lblPassword" runat="server" Text="Contraseña"></asp:Label><br />
             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
             <asp:Button ID="btnLogin" runat="server" Text="Ingresar" OnClick="btnLogin_Click" />
@@ -26,7 +19,9 @@
         </div>
         
     </div>
-    
+    <div class="back-aux">
+    <img src="images/login_aux.svg" style="width: 82%;margin-left: 9%;"/>
+    </div>
     <script>
         $(document).ready(function () {
             
@@ -41,5 +36,59 @@
 
 
         });
+
+        
+        function checkRut(rut) {
+            // Despejar Puntos
+            var valor = rut.value.replace('.','');
+            // Despejar Guión
+            valor = valor.replace('-','');
+    
+            // Aislar Cuerpo y Dígito Verificador
+            cuerpo = valor.slice(0,-1);
+            dv = valor.slice(-1).toUpperCase();
+    
+            // Formatear RUN
+            rut.value = cuerpo + '-'+ dv
+    
+            // Si no cumple con el mínimo ej. (n.nnn.nnn)
+            if(cuerpo.length < 7) { rut.setCustomValidity("RUT Incompleto");document.getElementById('ContentPlaceHolder1_btnRegistrar').disabled = true; return false;}
+    
+            // Calcular Dígito Verificador
+            suma = 0;
+            multiplo = 2;
+    
+            // Para cada dígito del Cuerpo
+            for(i=1;i<=cuerpo.length;i++) {
+    
+                // Obtener su Producto con el Múltiplo Correspondiente
+                index = multiplo * valor.charAt(cuerpo.length - i);
+        
+                // Sumar al Contador General
+                suma = suma + index;
+        
+                // Consolidar Múltiplo dentro del rango [2,7]
+                if(multiplo < 7) { multiplo = multiplo + 1; } else { multiplo = 2; }
+  
+            }
+    
+            // Calcular Dígito Verificador en base al Módulo 11
+            dvEsperado = 11 - (suma % 11);
+    
+            // Casos Especiales (0 y K)
+            dv = (dv == 'K')?10:dv;
+            dv = (dv == 0)?11:dv;
+    
+            // Validar que el Cuerpo coincide con su Dígito Verificador
+            if(dvEsperado != dv) { rut.setCustomValidity("RUT Inválido");document.getElementById('ContentPlaceHolder1_btnRegistrar').disabled = true; return false; }
+    
+            // Si todo sale bien, eliminar errores (decretar que es válido)
+            rut.setCustomValidity('');
+
+            document.getElementById('ContentPlaceHolder1_btnRegistrar').disabled = false;
+            return true;
+        }
+
     </script>
+
 </asp:Content>

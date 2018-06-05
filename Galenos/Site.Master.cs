@@ -26,7 +26,7 @@ namespace Galenos
 
         protected void btnIngreso_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+            Server.Transfer("Login.aspx", true);
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)

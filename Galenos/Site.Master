@@ -24,8 +24,8 @@
 	<header>
 		<div id="top">
 			<div><h1 class="logo"></h1></div>
-                <asp:Button ID="btnRegistro" runat="server" Text="Registro" OnClick="btnRegistro_Click" UseSubmitBehavior="False"  />
-                <asp:Button ID="btnIngreso" runat="server" Text="Ingreso" OnClick="btnIngreso_Click" UseSubmitBehavior="False" />
+                <asp:Button ID="btnRegistro" runat="server" Text="Registro" OnClick="btnRegistro_Click" UseSubmitBehavior="False" PostBackUrl="~/Registro.aspx"  />
+                <asp:Button ID="btnIngreso" runat="server" Text="Ingreso" OnClick="btnIngreso_Click" UseSubmitBehavior="False" PostBackUrl="~/Login.aspx" />
             <div  style="padding-top: 21%;">
                 <asp:Label ID="lblCliente" runat="server" ForeColor="Black"></asp:Label>
 		    </div>

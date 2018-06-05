@@ -18,10 +18,10 @@
             <asp:Label ID="lblRegistroHoras" runat="server" Text="Reserva de Horas Medicas"></asp:Label>
             <br />
             <br />
-            <asp:Button ID="btnHoraMedico"  runat="server" Text="Reservar hora por Medico" OnClick="btnHoraMedico_Click" />
+            <asp:Button ID="btnHoraMedico" runat="server" Text="Reservar hora por Medico" OnClick="btnHoraMedico_Click" CssClass="btn btn-primary" />
             <br />
             <br />
-            <asp:Button ID="btnPorArea" runat="server"  Text="Reservar hora por Area" OnClick="btnPorArea_Click" />
+            <asp:Button ID="btnPorArea" runat="server"  Text="Reservar hora por Area" OnClick="btnPorArea_Click" CssClass="btn btn-success" />
             <br />
             <br />
             <asp:MultiView ID="MultiView1" runat="server">
@@ -32,7 +32,7 @@
                         <asp:TextBox ID="txtNomMedico" runat="server"></asp:TextBox>
                     </asp:Panel>
                 </asp:View>
-                <asp:View ID="viewMedico" runat="server">
+                <asp:View ID="viewMedico" runat="server"  >
                     <asp:Panel ID="Panel1" runat="server" BackColor="#CCFFFF" Height="158px">
                         <br />
                         &nbsp;<asp:Label ID="lblApellidoMedico" runat="server" Align="Left" Text="Ingrese Apellido del Medico:"></asp:Label>
