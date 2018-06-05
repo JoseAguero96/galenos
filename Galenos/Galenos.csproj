@@ -113,6 +113,7 @@
     <Content Include="images\img1.jpg" />
     <Content Include="images\off_icon.png" />
     <Content Include="Inicio.aspx" />
+    <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="ListaMedicos.aspx" />
     <Content Include="packages.config" />

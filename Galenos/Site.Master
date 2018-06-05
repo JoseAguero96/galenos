@@ -6,12 +6,16 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Clínica Galenos Chile</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="css/style.css" rel="stylesheet"/>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
@@ -20,11 +24,15 @@
 	<header>
 		<div id="top">
 			<div><h1 class="logo"></h1></div>
-            <asp:Button ID="btnRegistro" runat="server" Text="Registro" OnClick="btnRegistro_Click"  />
-            <asp:Button ID="btnIngreso" runat="server" Text="Ingreso" OnClick="btnIngreso_Click" />
-            <asp:Label ID="lblCliente" runat="server" ForeColor="Black"></asp:Label>
-		    <asp:Button ID="btnSalir" CssClass="btn btn-danger" runat="server" Text="Salir" OnClick="btnSalir_Click" />
-		</div>
+                <asp:Button ID="btnRegistro" runat="server" Text="Registro" OnClick="btnRegistro_Click" UseSubmitBehavior="False"  />
+                <asp:Button ID="btnIngreso" runat="server" Text="Ingreso" OnClick="btnIngreso_Click" UseSubmitBehavior="False" />
+            <div  style="padding-top: 21%;">
+                <asp:Label ID="lblCliente" runat="server" ForeColor="Black"></asp:Label>
+		    </div>
+            <div>
+		        <asp:Button ID="btnSalir" CssClass="btn btn-danger" runat="server" Text="Salir" OnClick="btnSalir_Click" />
+            </div>
+        </div>
 		
 		<nav id="menu">
 			<ul>

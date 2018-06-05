@@ -45,11 +45,12 @@ body{
 	background: #0FADEA;
 }
 
-#top{
-	display: inline-grid;
-	grid-template-columns: 57% 20% 20%;
-	grid-column-gap: 10px;
-	width: 100%;
+#top {
+    display: inline-grid;
+    grid-template-columns: 62% 15% 20%;
+    grid-column-gap: 10px;
+    width: 100%;
+    height: 73px;
 }
 
 #btnRegistro{
@@ -72,10 +73,10 @@ body{
     margin-top: 29px;
 }
 
-#btnSalir{
-    width: 50px !important;
-    height: 40px !important;
+#btnSalir {
     float: right;
+    position: absolute;
+    margin-top: 1.8%;
     /*background: url(../images/off_icon.png);*/
 }
 
@@ -88,7 +89,7 @@ body{
 	background: #019DDA;
 	width: 100%;
 	height: 30px;
-	margin-top: 15%;
+	margin-top: 11.2%;
 	color: #fff;
     text-decoration: none;
 	border: 1px solid #0286BA;
@@ -6200,6 +6201,15 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 
 .bg-transparent {
     background-color: transparent !important
+}
+
+
+.bg-ultimo {
+    background-color: lightsalmon !important
+}
+
+a.bg-ultimo:focus, a.bg-ultimo:hover, button.bg-ultimo:focus, button.bg-ultimo:hover {
+    background-color: lightcoral !important
 }
 
 .border {
