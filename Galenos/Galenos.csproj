@@ -112,6 +112,8 @@
     <Content Include="images\galenoslogo.png" />
     <Content Include="images\img1.jpg" />
     <Content Include="images\off_icon.png" />
+    <Content Include="images\Profesional.jpg" />
+    <Content Include="images\Sala.jpg" />
     <Content Include="Inicio.aspx" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery.min.js" />

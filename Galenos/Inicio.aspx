@@ -8,10 +8,10 @@
           <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [800x400]" src="../images/img1.jpg" data-holder-rendered="true" style="height:350px;">
         </div>
         <div class="carousel-item active">
-          <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [800x400]" src="../images/img1.jpg" data-holder-rendered="true" style="height:350px;">
+          <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [800x400]" src="../images/Profesional.jpg" data-holder-rendered="true" style="height:350px;">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [800x400]" src="../images/img1.jpg" data-holder-rendered="true" style="height:350px;">
+          <img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [800x400]" src="../images/Sala.jpg" data-holder-rendered="true" style="height:350px;">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -25,7 +25,7 @@
     </div>
     <table class="table"><tbody><tr><td>
         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-          <div class="card-header">Oncología</div>
+          <div class="card-header">Odontología</div>
           <div class="card-body">
             <h5 class="card-title">Misteriosa causa del cáncer de mama</h5>
             <p class="card-text">Cientificos descubren que el cáncer de mama da por no ser de la U.</p>

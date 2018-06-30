@@ -12,59 +12,40 @@ using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Biblioteca;
+using Newtonsoft.Json.Linq;
 
 namespace Galenos
 {
-
-    public partial class Medico
-    {
-        public int id { get; set; }
-        public string nombre { get; set; }
-        public string apellido { get; set; }
-        public string foto { get; set; }
-        public string area_id { get; set; }
-        public string nombre_area { get; set; }
-        public string nombrecompleto
-        {
-            get {return string.Format("{0} {1}", nombre, apellido); }
-        }       
-
-    }
     public partial class Profesionales : System.Web.UI.Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //PopulateGridView();
+            PopulateGridView();
         }
 
-        //private void PopulateGridView()
-        //{
-        //    string apiUrl = "http://apigalenos.herokuapp.com/";
-        //    object input = new
-        //    {
-        //        Name = txtName.Text.Trim(),
-        //    };
-        //    string inputJson = (new JavaScriptSerializer()).Serialize(input);
-        //    WebClient client = new WebClient();
-        //    client.Headers["Content-type"] = "application/json";
-        //    client.Encoding = Encoding.UTF8;
-        //    StreamReader json1 = new StreamReader(client.OpenRead(apiUrl));
-        //    string json = json1.ReadToEnd();
+        private void PopulateGridView()
+        {
+            ConexionApi conexion = new ConexionApi();
+            //traer los datos del medico
+            var json = conexion.ejecutarLlamada("GET", "medicos" + "", "", null);
+            List<Medico> medicos = new List<Medico>();
+            medicos = JsonConvert.DeserializeObject<List<Medico>>(json);
 
-        //    dynamic jsonObj = JsonConvert.DeserializeObject(json);
-        //    var nombre = jsonObj[0]["nombre"].ToString();
-        //    var nombres = new ArrayList();
-        //    foreach (var item in jsonObj)
-        //    {
-        //        Medico medico = new Medico();
-        //        medico.nombre = item["nombre"];
-        //        medico.id = item["id"];
-        //        medico.foto = "https://image.ibb.co/fZW1Jn/seba.jpg";
-        //        nombres.Add(medico);
-        //    }
-        //    gvProfesionales.DataSource = nombres;
-        //    gvProfesionales.DataBind();
-        //}
+
+            foreach (Medico item in medicos)
+            {
+                var area = conexion.ejecutarLlamada("GET", "areas/" + item.area_id, "", "");
+
+                JObject jObject = JObject.Parse(area);
+                JToken nombreArea = jObject["nombre"];
+
+                item.nombre_area = nombreArea.ToString();
+            }
+
+            gvmedicos.DataSource = medicos;
+            gvmedicos.DataBind();
+        }
     }
 }

@@ -402,15 +402,18 @@ figure {
 
 img {
     vertical-align: middle;
-    border-style: none
-}
+
 
 svg:not(:root) {
     overflow: hidden
 }
 
 table {
-    border-collapse: collapse
+    border-collapse: collapse;
+    margin-left: 45px;
+}
+
+collapse: collapse
 }
 
 caption {
