@@ -21,17 +21,16 @@ namespace Biblioteca
             pass_codificada = pass_codificada.Replace("d", "wa");
             pass_codificada = pass_codificada.Replace("e", "vg");
             pass_codificada = pass_codificada.Replace("f", "usdf");
-            pass_codificada = pass_codificada.Replace("g", "tr");
-            pass_codificada = pass_codificada.Replace("h", "s");
-            pass_codificada = pass_codificada.Replace("i", "req");
-            pass_codificada = pass_codificada.Replace("j", "qr");
+            pass_codificada = pass_codificada.Replace("g", "tr12");
+            pass_codificada = pass_codificada.Replace("h", "saskg");
+            pass_codificada = pass_codificada.Replace("i", "reqyu");
+            pass_codificada = pass_codificada.Replace("j", "qr76");
             pass_codificada = pass_codificada.Replace("k", "pgf");
-            pass_codificada = pass_codificada.Replace("l", "oasd");
-            pass_codificada = pass_codificada.Replace("m", "ñasd");
+            pass_codificada = pass_codificada.Replace("l", "_");
+            pass_codificada = pass_codificada.Replace("m", "asd");
             pass_codificada = pass_codificada.Replace("n", "nerq");
-            pass_codificada = pass_codificada.Replace("ñ", "mqwe2");
             pass_codificada = pass_codificada.Replace("o", "lLL");
-            pass_codificada = pass_codificada.Replace("p", "_k34");
+            pass_codificada = pass_codificada.Replace("p", "k34");
             pass_codificada = pass_codificada.Replace("q", "j7644");
             pass_codificada = pass_codificada.Replace("r", "i54");
             pass_codificada = pass_codificada.Replace("s", "h23");
@@ -42,7 +41,6 @@ namespace Biblioteca
             pass_codificada = pass_codificada.Replace("x", "c34");
             pass_codificada = pass_codificada.Replace("y", "b31");
             pass_codificada = pass_codificada.Replace("z", "a12");
-
             return pass_codificada;
         }
 
@@ -53,8 +51,6 @@ namespace Biblioteca
             HttpResponseMessage response;
             HttpClient http = new HttpClient();
             
-
-
             switch (metodo)
             {
                 case "POST":
