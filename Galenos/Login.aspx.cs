@@ -23,6 +23,7 @@ namespace Galenos
             
             string rut = txtRut.Text;
             string pass = txtPassword.Text;
+            pass = conexion.encodePass(pass);
             var json = new { rut = rut, password = pass };
             var result = conexion.ejecutarLlamada("POST", "logear", "", json);
 
@@ -37,10 +38,6 @@ namespace Galenos
                 Session["user_fullname"] = user.fullName;
                 Session["user_phone"] = user.phone_number;
                 Session["user_rut"] = user.rut;
-
-
-
-
             }
             lblMen.Text = result.ToString();
         }
