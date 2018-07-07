@@ -34,8 +34,19 @@ namespace Galenos
             }
             else
             {
+                foreach (Medico item in medicos)
+                {
+                    var area = conexion.ejecutarLlamada("GET", "areas/" + item.area_id, "", "");
 
-                
+                    JObject jObject = JObject.Parse(area);
+                    JToken nombreArea = jObject["nombre"];
+
+                    item.nombre_area = nombreArea.ToString();
+                }
+
+                gvmedicos.DataSource = medicos;
+                gvmedicos.DataBind();
+
             }
 
 
