@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Agenda.cs" />
     <Compile Include="Area.cs" />
+    <Compile Include="Atencion.cs" />
     <Compile Include="ConexionApi.cs" />
     <Compile Include="Medico.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

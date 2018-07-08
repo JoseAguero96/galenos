@@ -39,7 +39,7 @@
 				<li><a href="Inicio.aspx">Inicio</a></li>
 				<li><a href="TomaHorasMedicas.aspx">Reservas Online</a></li>
 				<li><a href="Profesionales.aspx">Profesionales</a></li>
-				<li><a href="">Contacto</a></li>
+				<li><a href="HoraMedica.aspx">Mis Horas</a></li>
 			</ul>
 		</nav>
 	</header>

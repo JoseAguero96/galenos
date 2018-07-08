@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\style.css" />
+    <Content Include="HoraMedica.aspx" />
     <Content Include="images\galenoslogo.png" />
     <Content Include="images\img1.jpg" />
     <Content Include="images\off_icon.png" />
@@ -154,6 +155,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HoraMedica.aspx.cs">
+      <DependentUpon>HoraMedica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HoraMedica.aspx.designer.cs">
+      <DependentUpon>HoraMedica.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
