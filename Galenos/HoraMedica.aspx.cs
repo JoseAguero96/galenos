@@ -106,7 +106,7 @@ namespace Galenos
             //txtarea.Text = textResultado.ToString(); ;
             //txtArea
             string textoOrigina2 = area;
-            string textResultado2 = Regex.Replace(textoOriginal, @"[^a-zA-z0-9 ]+", "");
+            string textResultado2 = Regex.Replace(textoOrigina2, @"[^a-zA-z0-9 ]+", "");
             txtArea.Text = textResultado2.Replace("237", "í");
             string nombreNorma2 = txtArea.Text;
             txtArea.Text = nombreNorma2.Replace("225", "á");
